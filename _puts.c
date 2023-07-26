@@ -10,8 +10,8 @@ int _puts(char *s)
 char *pointr = s;
 
 while (*s)
-	_putchar(*str++);
-return (str - pointr);
+	_putchar(*s++);
+return (s - pointr);
 }
 
 /**

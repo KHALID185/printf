@@ -24,7 +24,7 @@ int print_hex(va_list pr, para_t *par)
 	*--strg = 'x';
 	*--strg = '0';
 	}
-	par->f_u = 1;
+	par->u_f = 1;
 	return (c_n += print_num(strg, par));
 }
 
@@ -52,7 +52,7 @@ int print_hex_u(va_list pr, para_t *par)
 		*--strg = 'X';
 		*--strg = '0';
 	}
-	par->f_u = 1;
+	par->u_f = 1;
 	return (c_n += print_num(strg, par));
 }
 
@@ -93,10 +93,10 @@ else if (par->h_modif)
 	k = (unsigned short int)va_arg(pr, unsigned int);
 else
 	k = (unsigned int)va_arg(pr, unsigned int);
-strg = conv_num(k, 8, CONVERT_UNS, par)
+strg = conv_num(k, 8, CONVERT_UNS, par);
 
 if (par->hax_f && k)
-	*--str = '0';
+	*--strg = '0';
 par->u_f = 1;
 return (c_n += print_num(strg, par));
 }

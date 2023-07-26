@@ -14,7 +14,7 @@
 #define BUFFER_S 1024
 #define BUFFER_FLUSH -1
 
-#define PARA_INIT (0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+#define PARA_INIT {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
 
 /**
  * struct parametres - parametres in structure
@@ -30,7 +30,7 @@
  * @precision: field precision
 */
 
-typedef struct parametres
+typedef struct par
 {
 unsigned int u_f	: 1;
 unsigned int p_f	: 1;
@@ -50,11 +50,10 @@ unsigned int precision;
  * @sp: specefier
  * @f: funcion associed
 */
-typedef struct specifier
+typedef struct specif
 {
-char *sp;
-int (*f)(va_list pr, para_t *par);
-
+char *specif;
+int (*f)(va_list pr, para_t *);
 } specif_t;
 
 int _puts(char *s);
@@ -78,19 +77,19 @@ int print_hex_u(va_list pr, para_t *par);
 int print_rev(va_list pr, para_t *par);
 int print_r13(va_list pr, para_t *par);
 
-int *conv_num(long int n, int b, int f, para_t *par);
+char *conv_num(long int n, int b, int f, para_t *par);
 
 int (*get_specif(char *str))(va_list pr, para_t *par);
 int get_p_fct(char *str, va_list pr, para_t *par);
 int get_f(char *str, para_t *par);
 int get_modif(char *str, para_t *par);
-int *get_wdth(char *str, para_t *par, va_list pr);
-int *get_precision(char *str, para_t *par, va_list pr);
+char *get_wdth(char *str, para_t *par, va_list pr);
+char *get_precision(char *str, para_t *par, va_list pr);
 
 int printf_fto(char *start, char *stp, char *exep);
 
 int digit(int c);
-int len_s(int *str);
+int len_s(char *st);
 int print_num(char *str, para_t *par);
 int print_num_r(char *str, para_t *par);
 int print_num_l(char *str, para_t *par);

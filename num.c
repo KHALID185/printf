@@ -9,7 +9,7 @@
  * Return: string
 */
 
-int *conv_num(long int n, int b, int f, para_t *par)
+char *conv_num(long int n, int b, int f, para_t *par)
 {
 static char *lst;
 static char bufff[50];
@@ -20,7 +20,7 @@ unsigned long n_1 = n;
 
 if (!(f & CONVERT_UNS) && n < 0)
 {
-	n = -n_1;
+	n_1 = -n;
 	sgn = '-';
 }
 lst = f & CONVERT_L ? "0123456789abcdef" : "0123456789ABCDEF";
@@ -54,7 +54,7 @@ int print_uns(va_list pr, para_t *par)
 	else
 		byt = (unsigned int)va_arg(pr, unsigned int);
 	par->u_f = 1;
-	return (print_num(conv_num(byt, 10, CONVERT_UNS, par)));
+	return (print_num(conv_num(byt, 10, CONVERT_UNS, par), par));
 }
 
 /**

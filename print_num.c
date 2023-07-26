@@ -13,14 +13,14 @@ int digit(int c)
 
 /**
  * len_s - length of string
- * @str: stroing
+ * @st: stroing
  * Return: integer (length)
 */
-int len_s(int *str)
+int len_s(char *st)
 {
 	int j = 0;
 
-	while (*str++)
+	while (*st++)
 		j++;
 	return (j);
 }
@@ -117,12 +117,12 @@ if (ng && i < par->wdth && pad_ch == '0' && !par->m_f)
 else
 ng = 0;
 if (par->p_f && !ng2 && !par->u_f)
-	n += _putchar(+), i++;
+	n += _putchar('+'), i++;
 else if (par->s_f && !ng2 && !par->u_f)
 	n += _putchar(' '), i++;
 n += _puts(str);
 while (i++ < par->wdth)
 	n += _putchar(pad_ch);
-	return (n);
+return (n);
 
 }

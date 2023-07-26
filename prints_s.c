@@ -30,16 +30,16 @@ return (s);
 int print_rev(va_list pr, para_t *par)
 {
 int l, s = 0;
-char *s = va_arg(pr, char *);
+char *st = va_arg(pr, char *);
 (void)par;
 
-	if (s)
+	if (st)
 	{
-		for (l = 0; *s; s++)
+		for (l = 0; *st; st++)
 			l++;
-		s--;
-		for (; l > 0; l--, s--)
-			s += _putchar(*s);
+		st--;
+		for (; l > 0; l--, st--)
+			s += _putchar(*st);
 	}
 	return (s);
 

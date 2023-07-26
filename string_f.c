@@ -8,7 +8,7 @@
  * Return: integer
 */
 
-int *get_precision(char *str, para_t *par, va_list pr)
+char *get_precision(char *str, para_t *par, va_list pr)
 {
 int l = 0;
 if (*str != '.')

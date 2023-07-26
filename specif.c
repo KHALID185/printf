@@ -16,11 +16,11 @@ specif_t specifs[] = {
 	{"b", print_bi},
 	{"o", print_oc},
 	{"u", print_uns},
-	{"x", printf_hex},
+	{"x", print_hex},
 	{"X", print_hex_u},
-	{"p", print_ad},
+	{"p", printf_ad},
 	{"S", print_S},
-	{"r", prinr_rev},
+	{"r", print_rev},
 	{"R", print_r13},
 	{NULL, NULL}
 	};
@@ -116,7 +116,7 @@ int j = 0;
  * Return: character
 */
 
-int *get_wdth(char *str, para_t *par, va_list pr)
+char *get_wdth(char *str, para_t *par, va_list pr)
 {
 int w = 0;
 if (*str == '*')
